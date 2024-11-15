@@ -39,6 +39,15 @@ export default class ServiceCubos {
       return response.data})
   }
 
+  getComentarios(idCubo){
+    let request = "api/ComentariosCubo/GetComentariosCubo/" + idCubo
+    let url = Global.urlApiCubos + request
+
+    return axios.get(url).then(response => {
+      console.log("comentarios🛒", response.data)
+      return response.data})
+  }
+
   login(usuario, contrasena) {
     let request = "api/manage/login"
     let url = Global.urlApiCubos + request
@@ -86,7 +95,7 @@ export default class ServiceCubos {
     console.log("token⭐: ", token)
     console.log("url: ", url)
 
-    return axios.post(url, {
+    return axios.post(url, "" ,{
       headers: {
         Authorization: "Bearer " + token
       }
@@ -95,5 +104,17 @@ export default class ServiceCubos {
       return response.data})
 
   }
+
+  register(nombre, email, contrasena){
+    let request = "api/manage/registrousuario"
+    let url = Global.urlApiCubos + request
+    let id = 0
+
+    return axios.post(url, {idUsuario: id, nombre: nombre, email: email, pass: contrasena}).then(response => {
+      console.log("registro🟩", response.data)
+      return response.data})
+  }
+
+  
 
 }

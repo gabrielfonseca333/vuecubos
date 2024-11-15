@@ -5,6 +5,7 @@ import CubosMarcasComponent from './components/CubosMarcasComponent.vue';
 import LoginComponent from './components/LoginComponent.vue';
 import PerfilComponent from './components/PerfilComponent.vue';
 import ComprarCubo from './components/ComprarCubo.vue';
+import RegisterComponent from './components/RegisterComponent.vue';
 
 const myRoutes = [
     {path:"/", component: HomeComponent},
@@ -12,7 +13,8 @@ const myRoutes = [
     {path:"/marca/:nombre", component: CubosMarcasComponent},
     {path:"/login", component: LoginComponent},
     {path:"/perfil", component: PerfilComponent},
-    {path:"/comprarcubo", component: ComprarCubo}
+    {path:"/comprarcubo", component: ComprarCubo},
+    {path: "/register", component: RegisterComponent}
 ]
 
 const router = createRouter({
